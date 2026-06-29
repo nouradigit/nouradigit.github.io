@@ -1,136 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noura Digital | Google Business Profile Cleanup & Optimisation in Singapore, KL & Selangor</title>
-    <meta name="description" content="Professional Google Business Profile cleanup & optimisation by Noura Digital. Serving Singapore, Kuala Lumpur, and Selangor with local SEO and review management.">
-    <style>
-        :root {
-            --primary: #005a60; /* Matches your teal brand color */
-            --primary-hover: #004449;
-            --bg: #f4f7f6;
-            --text: #2c3e50;
-        }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.7; 
-            color: var(--text); 
-            background-color: var(--bg);
-            margin: 0; 
-            padding: 0; 
-        }
-        .container {
-            max-width: 850px; 
-            margin: 40px auto; 
-            padding: 40px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        header { 
-            border-bottom: 2px solid #eef2f5; 
-            padding-bottom: 25px; 
-            margin-bottom: 35px; 
-            text-align: center;
-        }
-        h1 { margin: 0; color: var(--primary); font-size: 2.5rem; font-weight: 800; }
-        h2 { color: var(--primary); font-size: 1.75rem; margin-top: 0; }
-        h3 { color: var(--primary); font-size: 1.25rem; margin-top: 0; }
-        .subtitle { font-size: 1.1rem; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
-        .hero { 
-            background: #e6f2f2;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px; 
-            border-left: 5px solid var(--primary);
-        }
-        .cta-btn { 
-            display: inline-block; 
-            background: var(--primary); 
-            color: #fff; 
-            padding: 14px 30px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 6px; 
-            margin-top: 15px; 
-            transition: background 0.2s ease;
-        }
-        .cta-btn:hover { background: var(--primary-hover); }
-        .services { margin-bottom: 40px; }
-        .services-grid { display: grid; gap: 20px; }
-        .service-card { 
-            background: #ffffff;
-            border: 1px solid #e1e8ed; 
-            padding: 25px; 
-            border-radius: 8px; 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .nap-info { 
-            background: #f8fafc; 
-            padding: 30px; 
-            border-radius: 8px; 
-            margin-bottom: 40px; 
-            border: 1px solid #e2e8f0; 
-        }
-        .nap-info p { margin: 10px 0; }
-        footer { 
-            text-align: center;
-            font-size: 0.9em; 
-            color: #95a5a6; 
-            border-top: 1px solid #eef2f5; 
-            padding-top: 25px; 
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noura Digital | Google Business Profile Cleanup & Optimisation</title>
+  <meta name="description" content="Google Business Profile cleanup and optimisation for clinics and local service businesses in Singapore and Malaysia.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fa;
+      color: #1d2b36;
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 980px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    header {
+      padding: 34px 28px 18px;
+      text-align: center;
+      border-bottom: 1px solid #e5edf2;
+    }
+    .brand {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .tagline {
+      margin-top: 6px;
+      font-size: 13px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: #60717f;
+    }
+    section {
+      padding: 32px 28px;
+    }
+    .hero {
+      background: #e8f5fb;
+      margin: 28px;
+      border-radius: 16px;
+      padding: 34px;
+      border-left: 6px solid #0b5f7a;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      letter-spacing: -0.7px;
+    }
+    h2 {
+      font-size: 24px;
+      margin: 0 0 18px;
+    }
+    h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 14px; }
+    .muted { color: #526675; }
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      background: #0b2f44;
+      color: #ffffff;
+      padding: 13px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid #dbe6ec;
+      border-radius: 14px;
+      padding: 20px;
+      background: #ffffff;
+    }
+    .soft {
+      background: #f8fbfc;
+    }
+    .list {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .price {
+      font-size: 30px;
+      font-weight: 800;
+      color: #0b2f44;
+      margin: 8px 0;
+    }
+    .note {
+      font-size: 14px;
+      color: #60717f;
+    }
+    .footer {
+      text-align: center;
+      padding: 26px;
+      font-size: 14px;
+      color: #60717f;
+      border-top: 1px solid #e5edf2;
+    }
+    @media (max-width: 720px) {
+      .page { margin: 0; border-radius: 0; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      .hero { margin: 18px; padding: 24px; }
+      section { padding: 26px 20px; }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
 
-    <div class="container">
-        <header>
-            <h1>Noura Digital</h1>
-            <div class="subtitle">Google Business Profile Cleanup & Optimisation</div>
-        </header>
+    <header>
+      <h1 class="brand">Noura Digital</h1>
+      <div class="tagline">Google Business Profile Cleanup & Optimisation</div>
+    </header>
 
-        <section class="hero">
-            <h2>Google Business Profile Cleanup & Optimisation</h2>
-            <p>We provide full Google Business Profile audits, business information reviews, and complete local SEO setups to scale your local search visibility. No fluff, just direct local search optimization for service businesses.</p>
-            <a href="https://wa.me/60166026491" class="cta-btn">Contact via WhatsApp</a>
-        </section>
-
-        <section class="services">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Google Business Profile Optimisation & Setup</h3>
-                    <p>Complete profile creation, optimization of categories, updates, and custom setups to fix listing issues and maximize local reach.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Google Business Profile Cleanup & Management</h3>
-                    <p>Auditing business details, optimizing photos, managing posts, and fixing structural optimization errors to ensure alignment with Google algorithms.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Google Review Management & Local SEO</h3>
-                    <p>Strategic review response framework and target geo-focused local SEO adjustments to drive direct customer actions.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="nap-info">
-            <h2>Contact & Location</h2>
-            <p><strong>Business Name:</strong> Noura Digital</p>
-            <p><strong>Service Areas:</strong> Singapore, Kuala Lumpur, and Selangor</p>
-            <p><strong>Hours:</strong> Opens 9:00 AM - Closes 6:00 PM (Monday - Friday)</p>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Noura Digital. All Rights Reserved. Serving Singapore, KL, and Selangor.</p>
-        </footer>
+    <div class="hero">
+      <h1>Make your Google Business Profile look clearer, cleaner, and more trustworthy.</h1>
+      <p class="muted">
+        We help clinics and local service businesses clean up their Google Business Profile, improve profile clarity, and keep it active with simple updates.
+      </p>
+      <a class="button" href="https://wa.me/60166026491">Contact via WhatsApp</a>
     </div>
 
+    <section>
+      <h2>What we fix</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Profile cleanup</h3>
+          <p>We review your business details, categories, services, photos, and profile structure.</p>
+        </div>
+        <div class="card">
+          <h3>Photo optimisation</h3>
+          <p>We help organise and upload better profile photos so your business looks more active and real.</p>
+        </div>
+        <div class="card">
+          <h3>Google updates</h3>
+          <p>We create simple Google updates/posts so your profile does not look abandoned.</p>
+        </div>
+        <div class="card">
+          <h3>Review replies</h3>
+          <p>We help draft polite, professional replies to reviews without sounding robotic.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <h2>Who this is for</h2>
+      <p>
+        This service is for clinics and local service businesses that already have a Google Business Profile but feel it looks incomplete, inactive, or less polished than competitors.
+      </p>
+      <p class="muted">
+        No fake reviews. No ranking guarantees. No spam tactics. Just clean, honest profile improvement.
+      </p>
+    </section>
+
+    <section>
+      <h2>Simple process</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Quick check</h3>
+          <p>We review your current Google Business Profile and identify the main gaps.</p>
+        </div>
+        <div class="card">
+          <h3>2. Cleanup</h3>
+          <p>We optimise the profile basics, photos, services, updates, and review reply flow.</p>
+        </div>
+        <div class="card">
+          <h3>3. Keep active</h3>
+          <p>For monthly care, we continue with updates, photo uploads, and simple profile upkeep.</p>
+        </div>
+        <div class="card">
+          <h3>4. Simple report</h3>
+          <p>You get a short summary of what was done and what changed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <h2>Pricing</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>One-time cleanup</h3>
+          <div class="price">SGD 450</div>
+          <p>Best for businesses that want their profile cleaned up properly once.</p>
+        </div>
+        <div class="card">
+          <h3>Monthly care</h3>
+          <div class="price">SGD 250/month</div>
+          <p>Best for businesses that want their profile kept active and maintained.</p>
+        </div>
+      </div>
+      <p class="note">No long contract. Scope confirmed before work starts.</p>
+    </section>
+
+    <section>
+      <h2>Why Noura Digital</h2>
+      <ul class="list">
+        <li>Simple, honest Google Business Profile work.</li>
+        <li>No fake promises or ranking guarantees.</li>
+        <li>Clear profile improvements clients can understand.</li>
+        <li>Designed for small clinics and local service businesses.</li>
+      </ul>
+    </section>
+
+    <section class="soft">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> nouradigital.co@gmail.com</p>
+      <p><strong>Service areas:</strong> Singapore and Malaysia</p>
+      <a class="button" href="https://wa.me/60166026491">WhatsApp Noura Digital</a>
+    </section>
+
+    <div class="footer">
+      © 2026 Noura Digital. Google Business Profile cleanup and optimisation.
+    </div>
+
+  </main>
 </body>
 </html>

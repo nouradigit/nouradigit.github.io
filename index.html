@@ -6,17 +6,28 @@
   <title>Noura Digital | Google Business Profile Cleanup & Optimisation</title>
   <meta name="description" content="Google Business Profile cleanup and optimisation for clinics and local service businesses in Singapore and Malaysia.">
   <style>
+    :root {
+      --primary: #0b2f44;
+      --secondary: #0b5f7a;
+      --accent: #007a87;
+      --bg-light: #f5f8fa;
+      --bg-card: #ffffff;
+      --text-main: #0b2f44;
+      --text-muted: #496473;
+      --border-color: #e6eef2;
+    }
+
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f8fa;
-      color: #0b2f44;
+      background: #ffffff;
+      color: var(--text-main);
       line-height: 1.6;
     }
 
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
       width: min(1120px, 92%);
@@ -24,12 +35,12 @@
     }
 
     header {
-      padding: 22px 0;
-      background: rgba(255,255,255,0.92);
+      padding: 16px 0;
+      background: rgba(255, 255, 255, 0.95);
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #e6eef2;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .nav {
@@ -39,86 +50,121 @@
       gap: 20px;
     }
 
-    .logo {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-text {
       font-weight: 800;
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: -0.5px;
+      text-transform: uppercase;
+      color: var(--primary);
     }
 
     .navlinks {
       display: flex;
-      gap: 22px;
+      gap: 32px;
       align-items: center;
-      font-size: 14px;
-      color: #476070;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .navlinks a:hover {
+      color: var(--secondary);
     }
 
     .btn {
-      display: inline-block;
-      background: #0b2f44;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 999px;
-      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff !important;
+      padding: 14px 24px;
+      border-radius: 8px;
       font-weight: 700;
-      font-size: 14px;
-      box-shadow: 0 10px 24px rgba(11,47,68,0.15);
+      font-size: 15px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(11, 47, 68, 0.1);
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-1px);
     }
 
     .btn.light {
       background: #ffffff;
-      color: #0b2f44;
+      color: var(--primary) !important;
       border: 1px solid #dbe8ee;
       box-shadow: none;
     }
 
+    .btn.light:hover {
+      background: var(--bg-light);
+      border-color: #c2d5de;
+    }
+
     .hero {
-      padding: 78px 0 54px;
+      padding: 90px 0 70px;
+      background: #ffffff;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 46px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-block;
-      background: #e8f5fb;
-      color: #0b5f7a;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 13px;
+      color: var(--secondary);
+      font-size: 14px;
       font-weight: 700;
-      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.02;
-      letter-spacing: -2.6px;
-      margin: 0 0 22px;
+      font-size: clamp(38px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin: 0 0 24px;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     .lead {
       font-size: 19px;
-      color: #496473;
-      max-width: 620px;
-      margin-bottom: 28px;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin-bottom: 32px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
 
     .micro {
       color: #6a7e89;
       font-size: 14px;
+      border-left: 2px solid var(--border-color);
+      padding-left: 12px;
     }
 
     .mockup {
@@ -126,7 +172,6 @@
       border: none;
       border-radius: 0;
       padding: 0;
-      box-shadow: 0 24px 70px rgba(11,47,68,0.12);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -135,167 +180,217 @@
     .mockup-image {
       max-width: 100%;
       height: auto;
-      border-radius: 18px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(11, 47, 68, 0.1);
     }
 
     section {
-      padding: 64px 0;
+      padding: 90px 0;
     }
 
     .section-head {
-      max-width: 680px;
-      margin-bottom: 28px;
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -1.4px;
-      margin: 0 0 14px;
+      font-size: clamp(28px, 3.5vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 0 0 16px;
+      color: var(--primary);
+      font-weight: 800;
     }
 
     .section-head p {
-      color: #55707f;
-      font-size: 17px;
+      color: var(--text-muted);
+      font-size: 18px;
       margin: 0;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      gap: 24px;
     }
 
     .card {
-      background: #ffffff;
+      background: var(--bg-card);
       border: 1px solid #dfeaf0;
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(11,47,68,0.05);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .card.accent-top {
+      border-top: 4px solid var(--secondary);
+    }
+
+    .card.dark-top {
+      border-top: 4px solid var(--primary);
     }
 
     .card h3 {
-      margin: 0 0 10px;
-      font-size: 19px;
+      margin: 0 0 14px;
+      font-size: 20px;
+      font-weight: 700;
       letter-spacing: -0.3px;
+      color: var(--primary);
     }
 
     .card p {
       margin: 0;
-      color: #55707f;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .soft {
-      background: #ffffff;
-      border-top: 1px solid #e6eef2;
-      border-bottom: 1px solid #e6eef2;
+      background: var(--bg-light);
     }
 
     .step {
       display: flex;
-      gap: 16px;
+      flex-direction: column;
+      gap: 20px;
       align-items: flex-start;
+      position: relative;
     }
 
     .num {
-      width: 34px;
-      height: 34px;
-      flex: 0 0 34px;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
       border-radius: 50%;
-      background: #0b5f7a;
+      background: var(--secondary);
       color: #fff;
       display: grid;
       place-items: center;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 16px;
     }
 
-    .trust {
-      background: #0b2f44;
+    .trust-block {
+      background: var(--primary);
       color: #ffffff;
-      border-radius: 30px;
-      padding: 42px;
+      border-radius: 16px;
+      padding: 60px;
+    }
+
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
       align-items: center;
     }
 
-    .trust h2 {
+    .trust-block h2 {
       color: #ffffff;
+      margin-bottom: 20px;
     }
 
-    .trust p, .trust li {
+    .trust-block p {
       color: #d7e5ec;
-    }
-
-    ul {
+      font-size: 17px;
       margin: 0;
-      padding-left: 20px;
     }
 
-    li { margin-bottom: 10px; }
+    .trust-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .trust-list li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #d7e5ec;
+      font-weight: 600;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      color: #00cbcc;
+      font-size: 20px;
+      font-weight: 800;
+    }
 
     .final {
       text-align: center;
-      background: #e8f5fb;
-      border-radius: 30px;
-      padding: 48px 24px;
+      background: var(--bg-light);
+      border-radius: 16px;
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: auto;
     }
 
     .final h2 {
-      max-width: 760px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final .lead {
       margin-left: auto;
       margin-right: auto;
     }
 
     footer {
-      padding: 34px 0;
-      color: #6a7e89;
-      font-size: 14px;
+      padding: 60px 0 40px;
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 15px;
       text-align: center;
+      line-height: 1.8;
     }
 
-    @media (max-width: 820px) {
-      .navlinks a:not(.btn) { display: none; }
-
-      .hero {
-        padding: 50px 0 36px;
-      }
-
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .trust {
+    @media (max-width: 960px) {
+      .hero-grid, .trust-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
-
-      h1 {
-        letter-spacing: -1.5px;
-      }
-
-      .lead {
-        font-size: 17px;
+      
+      .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .mockup {
-        border-radius: 22px;
-        padding: 16px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 14px 0;
+      }
+      
+      .navlinks a:not(.btn) {
+        display: none;
+      }
+
+      .hero {
+        padding: 50px 0;
       }
 
       section {
-        padding: 46px 0;
+        padding: 60px 0;
       }
 
-      .trust {
-        padding: 30px 22px;
-        border-radius: 24px;
+      .trust-block {
+        padding: 40px 24px;
       }
     }
   </style>
@@ -305,11 +400,14 @@
 
   <header>
     <div class="wrap nav">
-      <div class="logo">Noura Digital</div>
+      <div class="logo-container">
+        <img src="1000223508.png" alt="Noura Digital Logo" class="logo-img">
+        <div class="logo-text">Noura Digital</div>
+      </div>
       <div class="navlinks">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
-        <a href="#contact" class="btn">WhatsApp</a>
+        <a href="https://wa.me/60166026491" class="btn">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -318,98 +416,88 @@
 
     <section class="hero">
       <div class="wrap hero-grid">
-
         <div>
           <div class="eyebrow">Google Business Profile Cleanup & Optimisation</div>
-          <h1>Make your Google Business Profile look cleaner, clearer, and more trustworthy.</h1>
+          <h1>Make your Google Business Profile work harder for you.</h1>
           <p class="lead">
-            Simple Google Business Profile cleanup and optimisation for clinics and local service businesses.
+            We help clinics and local service businesses in Singapore and Malaysia look more complete, active, and trustworthy on Google.
           </p>
-
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/60166026491">WhatsApp Noura Digital</a>
-            <a class="btn light" href="#services">See what we fix</a>
+            <a class="btn" href="https://wa.me/60166026491">Get a quick GBP check</a>
+            <a class="btn light" href="#services">See how we help</a>
           </div>
-
           <div class="micro">No fake reviews. No ranking guarantees. Just honest profile improvement.</div>
         </div>
-
         <div class="mockup">
-          <img src="1000229244.jpg" alt="HP laptop showing Noura Digital Google Business Profile configuration dashboard" class="mockup-image">
+          <img src="1000229287.jpg" alt="HP laptop showing Noura Digital Google Business Profile configuration dashboard" class="mockup-image">
         </div>
-
       </div>
     </section>
 
-    <section>
+    <section class="soft">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Your profile may be costing trust before people even contact you.</h2>
-          <p>
-            When people search, your Google Business Profile is often one of the first things they see. If it looks incomplete or inactive, they may move on.
-          </p>
+        <div class="section-head center">
+          <h2>Your profile might be losing trust.</h2>
+          <p>When people search, your Google Business Profile is often one of the first things they see. If it looks incomplete or inactive, they may move on.</p>
         </div>
-
         <div class="grid-3">
-          <div class="card">
+          <div class="card accent-top">
             <h3>Incomplete profile</h3>
-            <p>Missing or unclear details can make the business look less ready.</p>
+            <p>Missing or unclear details can make your business look less ready.</p>
           </div>
-          <div class="card">
-            <h3>Weak photos</h3>
-            <p>Old, random, or unclear photos can lower trust quickly.</p>
+          <div class="card accent-top">
+            <h3>Weak or outdated photos</h3>
+            <p>Old, random, or unclear photos can lower trust in seconds.</p>
           </div>
-          <div class="card">
+          <div class="card accent-top">
             <h3>No review replies</h3>
-            <p>Unanswered reviews can make the profile feel neglected.</p>
+            <p>Unanswered reviews can make your business seem inactive or uninterested.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="soft" id="services">
+    <section id="services">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head center">
           <h2>What Noura Digital helps with</h2>
           <p>Simple, useful profile improvements. No spam. No fake promises.</p>
         </div>
-
-        <div class="grid-3">
-          <div class="card">
+        <div class="grid-3" style="grid-template-rows: auto; row-gap: 24px;">
+          <div class="card dark-top">
             <h3>Profile cleanup</h3>
-            <p>Review business details, categories, services, and profile structure.</p>
+            <p>Fix business info, categories, services, and profile structure.</p>
           </div>
-          <div class="card">
+          <div class="card dark-top">
             <h3>Photo optimisation</h3>
-            <p>Improve photo selection and upload flow so the profile feels more active.</p>
+            <p>Improve photo selection and upload flow for better impact.</p>
           </div>
-          <div class="card">
+          <div class="card dark-top">
             <h3>Google updates</h3>
-            <p>Create simple updates so the profile does not look abandoned.</p>
+            <p>Create simple updates so your profile stays active, not forgotten.</p>
           </div>
-          <div class="card">
+          <div class="card dark-top">
             <h3>Review reply drafts</h3>
-            <p>Draft polite replies that sound professional and human.</p>
+            <p>Polite, professional replies that sound human.</p>
           </div>
-          <div class="card">
-            <h3>Services cleanup</h3>
-            <p>Make service information clearer for people comparing options.</p>
+          <div class="card dark-top">
+            <h3>Services & info cleanup</h3>
+            <p>Make your services clearer so people compare with confidence.</p>
           </div>
-          <div class="card">
+          <div class="card dark-top">
             <h3>Monthly profile care</h3>
-            <p>Optional upkeep to keep the profile clean, active, and consistent.</p>
+            <p>Ongoing upkeep to keep your profile clean, active, and consistent.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="process">
+    <section class="soft" id="process">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head center">
           <h2>Simple process</h2>
           <p>You do not need to learn Google Business Profile. We keep the process clear.</p>
         </div>
-
         <div class="grid-3">
           <div class="card step">
             <div class="num">1</div>
@@ -418,20 +506,18 @@
               <p>We review your current profile and identify the obvious gaps.</p>
             </div>
           </div>
-
           <div class="card step">
             <div class="num">2</div>
             <div>
-              <h3>Cleanup and improvements</h3>
-              <p>We improve the profile basics, photos, updates, and review reply flow.</p>
+              <h3>Cleanup & improvements</h3>
+              <p>We improve the basics, photos, updates, and review replies.</p>
             </div>
           </div>
-
           <div class="card step">
             <div class="num">3</div>
             <div>
               <h3>Optional monthly care</h3>
-              <p>We help keep the profile active with simple ongoing upkeep.</p>
+              <p>We help keep your profile active with simple ongoing upkeep.</p>
             </div>
           </div>
         </div>
@@ -440,33 +526,32 @@
 
     <section>
       <div class="wrap">
-        <div class="trust">
-          <div>
-            <h2>Clear, honest, no-pressure optimisation.</h2>
-            <p>
-              This is for clinics and local service businesses that want their profile to look cleaner, more complete, and easier to trust.
-            </p>
+        <div class="trust-block">
+          <div class="trust-grid">
+            <div>
+              <h2>Clear. Honest. No-pressure.</h2>
+              <p>This is for clinics and local service businesses that want their profile to look cleaner, more complete, and easier to trust.</p>
+            </div>
+            <div>
+              <ul class="trust-list">
+                <li>No fake reviews</li>
+                <li>No ranking guarantees</li>
+                <li>No spam tactics</li>
+                <li>Simple communication by WhatsApp</li>
+                <li>Suitable for small clinics and local service businesses</li>
+              </ul>
+            </div>
           </div>
-
-          <ul>
-            <li>No fake reviews</li>
-            <li>No ranking guarantees</li>
-            <li>No spam tactics</li>
-            <li>Simple communication by WhatsApp</li>
-            <li>Suitable for small clinics and local service businesses</li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="soft" id="contact">
       <div class="wrap">
         <div class="final">
           <h2>Want a quick check of your Google Business Profile?</h2>
-          <p class="lead" style="margin-left:auto; margin-right:auto;">
-            Send your business name on WhatsApp and we’ll take a quick look.
-          </p>
-          <a class="btn" href="https://wa.me/60166026491">WhatsApp Noura Digital</a>
+          <p class="lead">Send your business name on WhatsApp and we’ll take a quick look.</p>
+          <a class="btn" href="https://wa.me/60166026491">Get a quick GBP check</a>
         </div>
       </div>
     </section>
@@ -478,7 +563,7 @@
       <strong>Noura Digital</strong><br>
       Google Business Profile Cleanup & Optimisation<br>
       Email: nouradigital.co@gmail.com<br>
-      Service areas: Singapore and Malaysia
+      Service areas: Singapore & Malaysia
     </div>
   </footer>
 
